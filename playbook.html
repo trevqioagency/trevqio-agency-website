@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="trevqio-theme-boot">(function(){var t='dark';try{t=localStorage.getItem('trevqio-theme')||'dark'}catch(e){}document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark')})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trial Playbook — Trevqio Agency (Team)</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFBF3; --ink:#231A33; --coral:#FF6B4A; --coral-dark:#E8502F;
+    --sky:#2FA9D6; --sky-tint:#E4F5FB; --sun:#FFC94A;
+    --line:#EFE6D6; --ink-soft:#5B5468;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.65; font-size:16px;}
+  header.site{padding:20px 28px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;}
+  .brand{display:flex; align-items:center; gap:10px; font-family:'Baloo 2',sans-serif; font-size:1.15rem; font-weight:700; text-decoration:none; color:var(--ink);}
+  .brand img{height:30px; width:30px; border-radius:9px; object-fit:cover;}
+  .signout{font-size:0.88rem; color:var(--ink-soft); cursor:pointer; text-decoration:underline; background:none; border:none;}
+  .wrap{max-width:760px; margin:0 auto; padding:48px 28px 90px;}
+  h1{font-family:'Baloo 2',sans-serif; font-size:1.9rem; margin:0 0 6px;}
+  .sub{color:var(--ink-soft); margin-bottom:36px; font-size:1rem;}
+  h2{font-family:'Baloo 2',sans-serif; font-size:1.3rem; color:var(--coral-dark); margin:44px 0 14px; border-bottom:2px solid var(--line); padding-bottom:10px;}
+  h2:first-of-type{margin-top:0;}
+  h3{font-size:1rem; margin:20px 0 8px;}
+  .card{background:#fff; border:2px solid var(--ink); border-radius:16px; padding:20px 22px; margin:14px 0; white-space:pre-wrap; font-size:0.94rem; color:#3A3448;}
+  .card.prompt{background:var(--sky-tint); border-color:var(--sky);}
+  .card.message{background:var(--paper); border-style:dashed;}
+  ul.checklist{list-style:none; padding:0; margin:0 0 16px;}
+  ul.checklist li{padding:6px 0 6px 26px; position:relative; font-size:0.94rem;}
+  ul.checklist li::before{content:"☐"; position:absolute; left:0; color:var(--coral);}
+  p{color:#3A3448; font-size:0.96rem;}
+  .note{font-size:0.85rem; color:var(--ink-soft); font-style:italic;}
+  #not-authorized{max-width:480px; margin:100px auto; text-align:center; font-size:1rem; color:var(--ink-soft);}
+  #main-wrap{display:none;}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style id="trevqio-theme">
+/* Trevqio shared theme — dark (default) and light. Matches the homepage. */
+:root{
+  --bg:#111016; --surface:#191720; --surface2:#211e2b; --line:#353040;
+  --text:#f7f5fb; --muted:#b4afc2; --soft:#ddd7e8;
+  --accent:#a78bfa; --accent-hover:#c4b5fd; --on-accent:#151020; --link:#d4c4ff; --label:#d4c4ff;
+  --glow:rgba(139,92,246,.2); --header-bg:rgba(17,16,22,.9);
+  --featured:linear-gradient(160deg,#29213b,#191720 55%); --featured-line:#8b5cf6;
+  --prompt-bg:rgba(167,139,250,.08); --prompt-line:#5d4a7b; --dash-line:#5e4a7c; --btn-line:#51485f;
+  --ok-bg:rgba(185,243,209,.12); --ok-fg:#b9f3d1; --warn-bg:rgba(233,199,124,.14); --warn-fg:#e9c77c;
+  --bad-bg:rgba(255,138,138,.14); --bad-fg:#ff8a8a;
+  --approve-bg:#b9f3d1; --approve-fg:#0f2a1c; --decline-bg:#ff8a8a; --decline-fg:#2a0d0d;
+  --star-off:#3a3548; --code:#d9caff;
+  /* legacy names used by the older page styles */
+  --paper:var(--bg); --ink:var(--text); --ink-soft:var(--muted);
+  --coral:var(--accent); --coral-dark:var(--accent-hover);
+  --sky:var(--label); --sky-tint:rgba(167,139,250,.12); --sun:var(--accent-hover);
+  --grass:var(--ok-fg); --red:var(--bad-fg); --red-tint:var(--bad-bg);
+}
+html{color-scheme:dark;}
+html[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f7f5fc; --surface:#ffffff; --surface2:#f1ecfb; --line:#e1d9f0;
+  --text:#1b1626; --muted:#5d566b; --soft:#3a3448;
+  --accent:#7c5cf0; --accent-hover:#6a47e6; --on-accent:#ffffff; --link:#6a47e6; --label:#6a47e6;
+  --glow:rgba(124,92,240,.12); --header-bg:rgba(247,245,252,.92);
+  --featured:linear-gradient(160deg,#efe8ff,#ffffff 60%); --featured-line:#7c5cf0;
+  --prompt-bg:rgba(124,92,240,.07); --prompt-line:#cdbff2; --dash-line:#cdbff2; --btn-line:#cdbff2;
+  --ok-bg:rgba(23,121,74,.12); --ok-fg:#17794a; --warn-bg:rgba(180,120,20,.12); --warn-fg:#8a5a0a;
+  --bad-bg:rgba(214,69,69,.1); --bad-fg:#b32d2d;
+  --approve-bg:#1f9d62; --approve-fg:#ffffff; --decline-bg:#d64545; --decline-fg:#ffffff;
+  --star-off:#d9d1ea; --code:#5b3fc4;
+}
+body{
+  background:radial-gradient(circle at 92% -8%,var(--glow),transparent 520px),var(--bg) !important;
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.brand,.price,.num,.summary-card .num{font-family:Manrope,sans-serif !important; letter-spacing:-.035em; line-height:1.15;}
+a{color:var(--link);}
+header.site{background:var(--header-bg); backdrop-filter:blur(18px); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:50;}
+.brand{color:var(--text); font-weight:800;}
+.brand img{border-radius:10px; object-fit:contain;}
+.signout{color:var(--muted);}
+:focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
+
+/* surfaces */
+.card,.client,.summary-card,.plan,.toc,.job-card,.note{
+  background:var(--surface) !important; border:1px solid var(--line) !important; color:var(--text); box-shadow:none !important;
+}
+.card,.client,.plan{border-radius:18px;}
+.summary-card{border-radius:16px;}
+.plan.featured{background:var(--featured) !important; border-color:var(--featured-line) !important;}
+.card::before{background:var(--accent) !important; color:var(--on-accent) !important; border-radius:8px !important;}
+.details-block{background:var(--bg); border:1px solid var(--line);}
+.job-box,.job-body{background:transparent;}
+.msg-bubble.admin{background:var(--surface2); border-color:var(--line); color:var(--text);}
+.msg-bubble.client{background:var(--accent); color:var(--on-accent);}
+
+/* text */
+p,li,.sub,.hint,.empty,.save-note,.updated,.plan-tag,.back{color:var(--muted);}
+.card p,.client p,li{color:var(--soft);}
+.plan p.desc,.card .hint{color:var(--muted);}
+h1,h2,h3{color:var(--text);}
+.wrap h2{border-color:var(--line);}
+.card.prompt{background:var(--prompt-bg) !important; border:1px solid var(--prompt-line) !important;}
+.card.message{background:var(--bg) !important; border:1px dashed var(--dash-line) !important;}
+.plan-label{color:var(--label);}
+ul.checklist li::before{color:var(--accent);}
+.price span{color:var(--muted);}
+.file-list a{color:var(--link);}
+
+/* forms */
+input,select,textarea{background:var(--bg) !important; color:var(--text) !important; border:1px solid var(--line) !important; font-family:'DM Sans',sans-serif;}
+input::placeholder,textarea::placeholder{color:var(--muted); opacity:.7;}
+input:focus,select:focus,textarea:focus{outline:none !important; border-color:var(--accent) !important; box-shadow:0 0 0 3px var(--glow);}
+input[type="checkbox"],input[type="radio"]{accent-color:var(--accent);}
+.field input,.field select,.field textarea{border-radius:12px;}
+
+/* buttons */
+.btn{background:var(--accent); color:var(--on-accent) !important; border:1px solid transparent; border-radius:12px !important; font-weight:700; box-shadow:none; transition:transform .18s ease,background .18s ease;}
+.btn:hover{background:var(--accent-hover); transform:translateY(-2px);}
+.btn[disabled]{opacity:.6; transform:none;}
+a.btn{color:var(--on-accent) !important; text-decoration:none;}
+.btn-ghost,.btn.btn-ghost{background:transparent !important; color:var(--text) !important; border:1px solid var(--btn-line) !important;}
+.btn-ghost:hover{background:var(--surface2) !important;}
+.btn-approve{background:var(--approve-bg); color:var(--approve-fg) !important;}
+.btn-approve:hover{background:var(--approve-bg); filter:brightness(1.08);}
+.btn-decline,.btn-danger{background:var(--decline-bg); color:var(--decline-fg) !important;}
+.btn-decline:hover,.btn-danger:hover{background:var(--decline-bg); filter:brightness(1.08);}
+.plan.featured .btn,.plan .btn{background:var(--accent); color:var(--on-accent) !important;}
+
+/* tabs / toggles */
+.tabs{background:var(--bg); border:1px solid var(--line); border-radius:12px;}
+.tab{color:var(--muted);}
+.tab.active{background:var(--accent) !important; color:var(--on-accent) !important;}
+.toggle-btn{background:var(--bg); border-color:var(--line); color:var(--muted);}
+.toggle-btn.active{background:var(--accent) !important; border-color:var(--accent) !important; color:var(--on-accent) !important;}
+
+/* status */
+.status-pill{background:var(--sky-tint); color:var(--label);}
+.status-pill.delivered{background:var(--ok-bg) !important; color:var(--ok-fg) !important;}
+.status-pill.pending{background:var(--warn-bg) !important; color:var(--warn-fg) !important;}
+.status-pill.declined{background:var(--bad-bg) !important; color:var(--bad-fg) !important;}
+.job-steps span{background:var(--line);}
+.job-steps span.done{background:var(--ok-fg);}
+.star-btn{color:var(--star-off);}
+.star-btn.active{color:#e9b84a;}
+.msg.error{background:var(--bad-bg); color:var(--bad-fg);}
+.msg.info{background:var(--sky-tint); color:var(--text);}
+
+/* tables / code (tech docs) */
+table{background:var(--surface) !important; border:1px solid var(--line) !important;}
+th{background:var(--surface2) !important; color:var(--text) !important;}
+td{color:var(--soft) !important; border-color:var(--line) !important;}
+code,pre{background:var(--bg) !important; color:var(--code) !important; border:1px solid var(--line);}
+
+footer{border-color:var(--line) !important; color:var(--muted);}
+::selection{background:var(--accent); color:var(--on-accent);}
+
+/* theme switch button */
+.theme-toggle{position:fixed; left:16px; bottom:16px; z-index:70; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--text); cursor:pointer; font-size:1.15rem; line-height:1; display:grid; place-items:center; box-shadow:0 8px 24px rgba(0,0,0,.22); padding:0;}
+.theme-toggle:hover{border-color:var(--accent);}
+
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="brand" href="admin.html">
+    <img src="assets/trevqio-icon.png" alt="">
+    Trevqio Agency — Team
+  </a>
+  <button class="signout" id="signout">Sign out</button>
+</header>
+
+<div id="not-authorized" style="display:none;">You're not signed in as the team account, so this page isn't available to you.</div>
+
+<div class="wrap" id="main-wrap">
+  <h1>7-Day Trial Content Playbook</h1>
+  <p class="sub">Pull each client's details from admin.html and drop them into the placeholders below. The trial is a small written scope (about 2 branded posts with matching captions) — agree the deliverables with the client first. Never send raw AI output straight to a client — run it through the QC checklist first.</p>
+
+  <h2>Master Client Context (run once per client, first thing)</h2>
+  <div class="card prompt">You are the AI content-production assistant for Trevqio Agency, a marketing agency that helps small businesses show up consistently on social media.
+
+Your task is to create accurate, professional and engaging marketing content based ONLY on information provided by the client.
+
+CLIENT INFORMATION:
+Name: [Client Name]
+Business: [Business Name]
+Industry: [e.g. restaurant, salon, retail, local service]
+Market/Location: [City, State, Country]
+
+TARGET AUDIENCE: [Target Audience]
+BRAND VOICE: [Brand Voice — e.g. Professional / Friendly / Modern / Bold / Educational]
+BUSINESS GOALS: [e.g. Get more customers / Build brand awareness / Save time / Promote an offer]
+PLATFORMS: [Instagram / Facebook / TikTok / etc.]
+
+IMPORTANT RULES:
+1. Never invent products, prices, offers, dates, statistics, testimonials or claims.
+2. Never present assumptions as facts.
+3. Follow applicable advertising rules in the client's market. Make no health, income or results guarantees, and no misleading before/after or comparison claims unless the client has supplied evidence.
+4. Avoid discriminatory or exclusionary language of any kind.
+5. Keep the content professional and clear.
+6. Include a relevant call-to-action where appropriate.
+7. Adapt the writing to the client's market and audience.
+
+Confirm you understand this client profile and are ready to create content.</div>
+
+  <h2>Day 1 — Welcome &amp; Business Review</h2>
+  <p>No AI content today — manual review + a short client message.</p>
+  <ul class="checklist">
+    <li>Read their submitted business profile and job details</li>
+    <li>Skim their website/social accounts if given</li>
+    <li>Confirm the written trial scope with the client (what's included, what's not)</li>
+    <li>Confirm you have the brand assets (logo, colours, photos) you need to start</li>
+  </ul>
+  <div class="card message">Hi [Name], welcome to your Trevqio trial! We've reviewed your business and what you'd like to promote, and we're starting your content today. Your first pieces will land in your dashboard over the next few days. The trial covers [agreed scope, e.g. 2 branded posts with captions].</div>
+
+  <h2>Day 2 — Social Media Posts</h2>
+  <div class="card prompt">Create the social media posts agreed for this client's trial, using the client information already established.
+
+Focus for this job: [Product / offer / project name] — [Type]
+Key details to include (use only what's listed, never invent): [Key details]
+Price (if given): [Price] | Dates (if given): [Start] to [End] | Link: [Link]
+
+For each post give: headline, main text, call-to-action, recommended platform, and a suggested visual idea for the branded graphic.
+
+Don't invent facts or statistics. Make every post distinct — avoid repeating hooks or phrases across posts.
+
+Things to avoid: [Avoid, if any]</div>
+
+  <h2>Day 3 — Captions</h2>
+  <div class="card prompt">Create captions to match the posts from Day 2, based on the client information already established.
+
+Vary the style where the scope allows: Professional, Educational, Conversational, and Engagement-focused.
+
+Each caption needs a strong opening hook, clear concise content, and a natural call-to-action. Include hashtags (5–8) only if the client's platform and voice suit them.
+
+Keep them authentic. Don't use excessive emojis. Don't make unsupported claims.
+
+Things to avoid: [Avoid, if any]</div>
+
+  <h2>Day 4 — Branded Graphics</h2>
+  <p>Build the graphics for the Day 2 posts using the client's own brand assets (logo, colours, fonts, photos). If the client hasn't supplied brand assets, ask for them now rather than inventing a look.</p>
+  <ul class="checklist">
+    <li>Logo, colours and fonts match the client's brand</li>
+    <li>Text on each graphic matches the approved post copy exactly</li>
+    <li>Sized correctly for the agreed platform(s)</li>
+    <li>Only photos/images the client supplied or has the right to use</li>
+  </ul>
+  <div class="card prompt">Write a short, plain-language brief for each graphic (layout, headline text, supporting text, image to use, colours from the brand) so it can be built in the design tool. Use only the client's supplied brand details and the approved Day 2 copy.</div>
+
+  <h2>Day 5 — Mini Content Plan + Introduce the Paid Plans</h2>
+  <h3>Content prompt</h3>
+  <div class="card prompt">Create a 1-week content plan for this client.
+
+Business: [Business Name] | Market: [Location] | Target audience: [Target Audience] | Goal: [Goal] | Platforms: [Platforms]
+
+Table columns: Day | Platform | Content Type | Topic | Main Message | Call-to-action
+
+Balance promotion, education, brand building and engagement. Don't repeat the same content idea twice, and don't invent offers or events the client hasn't given.</div>
+  <h3>Then send this to the client (don't wait until Day 7)</h3>
+  <div class="card message">Hi [Name], you've now seen a few days of what Trevqio can produce for [Business Name]. If you'd like us to keep going after the trial, here are the options (all in naira):
+
+- Content Starter — ₦15,000 one-time: 4 branded graphics, 4 matching captions, 1-week content plan, 1 revision round. You publish.
+- Content Monthly — ₦25,000/month: 8 graphics and captions, monthly content calendar, 2 revision rounds. You publish.
+- Social Starter — ₦40,000/month: 8 posts with graphics and captions, up to 2 agreed platforms, scheduling and publishing, comment checks twice weekly, monthly summary.
+- Social Growth — ₦70,000/month: 12 posts, up to 2 agreed platforms, up to 4 edits from your footage, limited business-day inbox checks, report and next-month calendar.
+
+Ad spend, filming, photography and influencer fees are quoted separately. Let us know which fits and we'll get you set up.</div>
+
+  <h2>Day 6 — Review &amp; Revisions Prep</h2>
+  <ul class="checklist">
+    <li>Re-read every piece against the client's original details</li>
+    <li>Fix tone mismatches and repeated hooks</li>
+    <li>Confirm graphics and captions pair up correctly</li>
+    <li>Run everything through the QC checklist below</li>
+  </ul>
+
+  <h2>Quality Control — check every piece before it goes to a client</h2>
+  <h3>Accuracy</h3>
+  <ul class="checklist">
+    <li>No invented information</li>
+    <li>Prices, dates and offers are exactly as the client gave them</li>
+    <li>Business name, names and locations are spelled correctly</li>
+  </ul>
+  <h3>Brand</h3>
+  <ul class="checklist">
+    <li>Matches the client's tone</li>
+    <li>Uses the client's real brand assets</li>
+    <li>Suitable for the target audience</li>
+  </ul>
+  <h3>Marketing</h3>
+  <ul class="checklist">
+    <li>Clear hook</li>
+    <li>Clear call-to-action</li>
+    <li>Not repetitive across pieces</li>
+  </ul>
+  <h3>Compliance</h3>
+  <ul class="checklist">
+    <li>No discriminatory or exclusionary language</li>
+    <li>No misleading claims</li>
+    <li>No unsupported guarantees (health, income, results)</li>
+  </ul>
+  <p class="note">Never send raw AI output straight to a client — this checklist is the gate between draft and delivery.</p>
+
+  <h2>Day 7 — Final Delivery + Conversion</h2>
+  <h3>Start every delivered content document with this header</h3>
+  <div class="card message">TREVQIO AGENCY
+Content Delivery
+
+Client: [Client Name]
+Business: [Business Name]
+Period: [Month Year]
+Prepared by: Trevqio Agency</div>
+  <h3>Checklist before uploading</h3>
+  <ul class="checklist">
+    <li>Run everything from Days 2–5 through the QC checklist above</li>
+    <li>Name files: Trevqio_[ClientName]_[ContentType]_[MonthYear] — e.g. Trevqio_AdaOkafor_SocialPosts_Nov2026</li>
+    <li>Upload all as deliverables in admin.html for this client</li>
+    <li>Mark status as Delivered</li>
+  </ul>
+  <h3>Revision policy</h3>
+  <p>One reasonable revision round is included with the trial and Content Starter; Content Monthly includes two. It covers factual corrections and reasonable adjustments to tone or messaging. Major changes or new content requests are treated as a separate request.</p>
+  <h3>Final message to send</h3>
+  <div class="card message">Hi [Name], your trial content is ready — check your dashboard for everything we've created: branded posts, captions and your 1-week content plan. This includes one round of revisions if anything needs adjusting. If you'd like to continue, you can choose a plan from your dashboard (Content Starter ₦15,000 one-time, Content Monthly ₦25,000/month, Social Starter ₦40,000/month or Social Growth ₦70,000/month) and we'll get you set up.</div>
+</div>
+
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
+  import { SUPABASE_URL, SUPABASE_ANON_KEY, ADMIN_EMAIL } from './supabase-config.js';
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  supabase.auth.getUser().then(({ data: { user } })=>{
+    if (!user || user.email !== ADMIN_EMAIL){
+      document.getElementById('not-authorized').style.display = 'block';
+      return;
+    }
+    document.getElementById('main-wrap').style.display = 'block';
+  });
+
+  document.getElementById('signout').addEventListener('click', async ()=>{
+    await supabase.auth.signOut();
+    window.location.href = 'login.html';
+  });
+</script>
+
+<script id="trevqio-theme-toggle">(function(){var b=document.createElement('button');b.className='theme-toggle';b.type='button';function cur(){return document.documentElement.getAttribute('data-theme')==='light'?'light':'dark'}function paint(){var l=cur()==='light';b.textContent=l?'\u{1F319}':'☀️';b.setAttribute('aria-label',l?'Switch to dark theme':'Switch to light theme');b.title=b.getAttribute('aria-label')}b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('trevqio-theme',n)}catch(e){}paint()});paint();document.body.appendChild(b)})();</script>
+</body>
+</html>
